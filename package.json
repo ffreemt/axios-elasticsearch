@@ -3,13 +3,20 @@
   "version": "0.0.1",
   "description": "search some elasticsearch database using axios for browser/vuejs",
   "main": "index.js",
+  "scripts": {
+    "test": "mocha -t 4000"
+  },
   "author": "ffreemt",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^7.5.0"
+    "consola": "^2.14.0",
+    "eslint": "^7.5.0",
+    "esm": "^3.2.25",
+    "tracer": "^1.1.3"
   }
 }
