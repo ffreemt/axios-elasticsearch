@@ -9,10 +9,10 @@ The elasticsearch node (a petite VPS) currently hosts some corpora (united natio
 ## Usage
 
 ```js
-const axios_es = require("axios-elasticsearch");
+from axios_es import "axios-elasticsearch";
 
 let query = "test测试";
-fetch_es(query, index="uncor")
+axios_es(query, index="uncor")
 .then(res => console.log(res))
 .catch(e => console.log(e.message))
 
@@ -51,7 +51,7 @@ This package has a single module: `search_es`
 ### search_es
 `search_es`: searches a phrase or sentence in the elasticsearch node with a given index or indices and default_operator (default to "AND").
 
-#### search_es with default to "AND"
+#### search_es with default_operatorv="OR"
 If `search_es` with default_operator="AND" does not return any matched result, `search_es` with default_operator="OR" will attempt to suggest some closely matched result.
 
 Since `search_es` with default_operator="OR" takes much longer than `search_es` with default_operator="AND" (especially when the phrace/sentence is long), use `search_es` with default_operator="AND" first. If `search_es` does not return anything, use `suggest_es` default_operator="OR".
