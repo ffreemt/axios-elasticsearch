@@ -1,7 +1,7 @@
-# axios-elasticsearch
-search the elasticsearch database using AND and suggester using axios for browser/vuejs
+# axios-elasticsearch [![npm version](https://badge.fury.io/js/axios-elasticsearch.svg)](https://badge.fury.io/js/axios-elasticsearch)
+search the elasticsearch database with default_operator="AND" and default_operator="OR" using axios for browser/vuejs
 
-The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
+The elasticsearch node (a petite VPS) currently hosts some corpora (united nations en-zh corpus, examples sentences from some bilingual (en-zh) dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
 
 ## Installation
 `npm i axios-elasticsearch `
@@ -9,7 +9,7 @@ The elasticsearch node (a petite VPS) currently hosts some corpora (united natio
 ## Usage
 
 ```js
-from axios_es import "axios-elasticsearch";
+import axios_es from "axios-elasticsearch";
 
 let query = "test测试";
 axios_es(query, index="uncor")
@@ -41,7 +41,8 @@ em>结果以及进行<em>测</em><em>试</em>者的姓名。',
   '(ii) Modified annex H <em>test</em> cases, <em>test</em> scripts and <em>test</em> manuals have been developed and evaluated in order to prepare for functional CSEUR tests;→为了准备对合并的欧洲登记册系
 统进行功能<em>测</em><em>试</em>，已对附件H的<em>测</em><em>试</em>用例、<em>测</em><em>试</em>脚本和<e
 m>测</em><em>试</em>手册进行调整和评估；',
-  '<em>Test</em> Objective→<em>测</em><em>试</em>物'
+  '<em>Test</em> Objective→<em>测</em><em>试</em>物',
+   '(Search term(s): test测试, took 718 ms)'
 ]
 ```
 
