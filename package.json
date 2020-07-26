@@ -6,8 +6,19 @@
   "scripts": {
     "test": "mocha -r esm -t 4000"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffreemt/axios-elasticsearch.git"
+  },
+  "keywords": [
+    "elasticsearch", "axios", "vuejs"
+  ],
   "author": "ffreemt",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ffreemt/axios-elasticsearch/issues"
+  },
+  "homepage": "https://github.com/ffreemt/axios-elasticsearch#readme",
   "dependencies": {
     "axios": "^0.19.2",
     "esm": "^3.2.25"
