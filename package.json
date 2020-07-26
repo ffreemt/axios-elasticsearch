@@ -1,6 +1,6 @@
 {
   "name": "axios-elasticsearch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "search some elasticsearch database using axios for browser/vuejs",
   "main": "index.js",
   "scripts": {
