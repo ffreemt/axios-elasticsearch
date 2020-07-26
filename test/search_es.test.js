@@ -5,18 +5,18 @@
 
 // jest.setTimeout(30000);
 
-// import consola from "consola";
+import consola from "consola";
 
-const consola = require("consola");
+// const consola = require("consola");
 consola.level = process.env.CONSOLA_DEBUG || 3;
 // consola.level = process.env.CONSOLA_DEBUG || 5; //show debug
 
 // -r esm
-// import search_es from "../search_es";
-const search_es = require("../search_es");
+import search_es from "../search_es";
+// const search_es = require("../search_es");
 
-// import { expect } from "chai";
-expect = require("chai").expect;
+import { expect } from "chai";
+// expect = require("chai").expect;
 
 describe("@1 search_es: AND returns results ", () => {
   it("#1 search_es(''): 'empty'", async () => {
@@ -34,7 +34,7 @@ describe("@1 search_es: AND returns results ", () => {
 
   let query = "developing countries jointly 国";
   it("#3 search_es: " + query, async () => {
-    var result = await search_es(query, index="dictcor");
+    var result = await search_es(query, "dictcor");
     consola.debug("#3 consola.debug ", result);
     // expect(result.length).to.equal(10);
     expect(result.length).to.equal(0);

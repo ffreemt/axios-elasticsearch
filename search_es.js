@@ -1,8 +1,10 @@
 // search_es.js based on axios_es.js
 
-// import tracer from "tracer";
-const tracer = require("tracer");
-const axios = require("axios");
+import tracer from "tracer";
+import axios  from "axios";
+// const tracer = require("tracer");
+// const axios = require("axios");
+
 // const jsonPath = require("JSONPath");
 
 const logger = tracer.colorConsole({
@@ -28,8 +30,9 @@ let config = {
   }
 };
 
-module.exports = search_es;
-async function search_es(query = "", index="", default_operator="") {
+// module.exports = search_es;
+export default search_es;
+async function search_es(query="", index="", default_operator="") {
   logger.debug("query: **%s**", query);
   if (typeof(query) === "string"){
     query = query.trim();

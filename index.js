@@ -1,11 +1,14 @@
-// import consola from "consola";
-const consola = require('consola');
+// playground/axios-elasticsearch/index.js
+import consola from "consola";
+// const consola = require("consola");
 consola.level = process.env.CONSOLA_DEBUG || 3;
 // consola.level = process.env.CONSOLA_DEBUG || 5; //show debug
 
-const search_es = require("./search_es");
+// const search_es = require("./search_es");
+import search_es from "./search_es";
 
-module.exports = fetch_es;
+// module.exports = fetch_es;
+export default fetch_es;
 async function fetch_es(query, index="") {
   if (!query) {
     return [];
@@ -31,7 +34,7 @@ async function fetch_es(query, index="") {
 
   try {
     res = search_es(query, index, "OR"); // search with
-   "OR"
+    "OR";
   } catch (e) {
     consola.error(`suggest_es e: ${e}`);
     res = [e.message];

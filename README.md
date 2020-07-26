@@ -4,7 +4,7 @@ search the elasticsearch database using AND and suggester using axios for browse
 The elasticsearch node (a petite VPS) currently hosts some corpora (united nations copurs, examples sentences from some bilingual dictionaries and the European-Parliament German-English corpus). The elasticsearch node is open to the public for read-only access.
 
 ## Installation
-`npm i  `
+`npm i axios-elasticsearch `
 
 ## Usage
 
@@ -46,35 +46,14 @@ m>测</em><em>试</em>手册进行调整和评估；',
 ```
 
 ---
-This package has two modules: `search_es` and `suggest_es`
+This package has a single module: `search_es`
 
 ### search_es
-`search_es`: searches a phrase or sentence in the elasticsearch node with a given index or indices.
+`search_es`: searches a phrase or sentence in the elasticsearch node with a given index or indices and default_operator (default to "AND").
 
+#### search_es with default to "AND"
+If `search_es` with default_operator="AND" does not return any matched result, `search_es` with default_operator="OR" will attempt to suggest some closely matched result.
 
-### suggest_es
-`suggest_es`: if `search_es` does not return any matched result, `suggest_es` will attempt to suggest some closely matched result.
+Since `search_es` with default_operator="OR" takes much longer than `search_es` with default_operator="AND" (especially when the phrace/sentence is long), use `search_es` with default_operator="AND" first. If `search_es` does not return anything, use `suggest_es` default_operator="OR".
 
-Since `suggest_es` takes much longer than `search_es` (especially  use `search_es` first. If `search_es` does not return anything, use `suggest_es`.
-
-### Miscellany
-`search_es` and `suggest_es` are defined as follows.
-
-`async function search_es(query = "", index = "") {...; if (!index) {
-    index = ["yhdcd", "dictcor", "uncor"];
-  };...}`
-
-`async function suggest_es(query = "", index = "") {...; if (!index) {
-    index = ["yhdcd", "dictcor", "uncor"];
-  } ;...}`
-
-`search_es` and `suggest_es` return: [str]
-
-The essencce of implementation:
-```js
-axios setup
-
-res = r0.body.hits.hits.map(el => el.highlight.text[0])
-```
-
-Refer to search_es.js, suggest_es.js and files in the `test` directory.
+Refer to `index.js`, `search_es.js` and files in the `test` directory.
