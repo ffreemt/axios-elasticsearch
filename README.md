@@ -12,7 +12,7 @@ The elasticsearch node (a petite VPS) currently hosts some corpora (united natio
 import axios_es from "axios-elasticsearch";
 
 let query = "test测试";
-axios_es(query, index="uncor")
+axios_es(query, "uncor")
 .then(res => console.log(res))
 .catch(e => console.log(e.message))
 
