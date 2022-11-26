@@ -21,7 +21,7 @@ async function fetch_es(query, index="") {
 
   let res;
   try {
-    res = search_es(query, index);
+    res = await search_es(query, index);
   } catch (e) {
     consola.error("search_es e:", e);
     res = [e.message];
@@ -33,8 +33,7 @@ async function fetch_es(query, index="") {
     return res;
 
   try {
-    res = search_es(query, index, "OR"); // search with
-    "OR";
+    res = search_es(query, index, "OR"); // search with "OR";
   } catch (e) {
     consola.error(`suggest_es e: ${e}`);
     res = [e.message];
