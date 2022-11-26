@@ -29,8 +29,9 @@ async function fetch_es(query, index="") {
   }
 
   // if (res.length)
-  if (res.length > 1)
+  if (res.length > 1) {
     return res;
+  }
 
   try {
     res = search_es(query, index, "OR"); // search with "OR";
